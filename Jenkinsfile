@@ -5,13 +5,15 @@ pipeline {
             }
       }
     triggers {
-        pollSCM 'H/5 * * * *'
+        pollSCM 'H/2 * * * *'
     }
     stages {
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
+                java --version
+                echo $JAVA_HOME
                 cd myapp
                 pip install -r requirements.txt
                 '''
