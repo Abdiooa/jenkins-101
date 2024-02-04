@@ -14,6 +14,7 @@ pipeline {
                 sh '''
                 java --version
                 echo $JAVA_HOME
+                docker --version
                 cd myapp
                 pip install -r requirements.txt
                 '''
